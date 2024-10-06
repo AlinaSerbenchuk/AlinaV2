@@ -10,18 +10,15 @@
 </head>
 <body>
     <header>
-        <nav>
-            <button class="menu-toggle">&#9776;</button>
-            <ul class="nav-menu">
+        <nav class="navbar">
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-moon"></i>
-            </button>
         </nav>
     </header>
 
@@ -60,29 +57,25 @@
 
     <section id="portfolio">
         <h2>Portfolio</h2>
-        <div class="gallery">
-            <!-- Images will be added dynamically -->
-        </div>
+       
     </section>
 
-    <section id="pricing">
-        <h2>Pricing</h2>
-        <div class="pricing-container">
-            <!-- Pricing cards will be added dynamically -->
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch for bookings and inquiries:</p>
-        <p>Email: your.email@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
-
+    
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Inline JavaScript is running');
+            const btn = document.getElementById('photo-gallery-btn');
+            if (btn) {
+                btn.onclick = function() {
+                    console.log('Inline Photo Gallery Button Clicked');
+                    // Ensure the modal is displayed
+                    document.getElementById('photo-gallery-modal').style.display = 'block';
+                };
+            } else {
+                console.error('Inline Photo Gallery Button not found');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -160,4 +160,116 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
 
     observer.observe(aboutSection);
+
+    // Photo and Video Gallery Modals
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('JavaScript is running');
+        const photoGalleryBtn = document.getElementById('photo-gallery-btn');
+        const videoGalleryBtn = document.getElementById('video-gallery-btn');
+        const photoGalleryModal = document.getElementById('photo-gallery-modal');
+        const videoGalleryModal = document.getElementById('video-gallery-modal');
+        const closePhotoGallery = document.getElementById('close-photo-gallery');
+        const closeVideoGallery = document.getElementById('close-video-gallery');
+
+        if (photoGalleryBtn) {
+            photoGalleryBtn.onclick = function() {
+                console.log('Photo Gallery Button Clicked');
+                photoGalleryModal.style.display = 'block';
+            };
+        } else {
+            console.error('Photo Gallery Button not found');
+        }
+
+        if (videoGalleryBtn && videoGalleryModal) {
+            videoGalleryBtn.addEventListener('click', function() {
+                console.log('Video Gallery Button Clicked');
+                videoGalleryModal.style.display = 'flex'; // Open modal on button click
+            });
+
+            // Close modal when clicking the close button
+            if (closeVideoGallery) {
+                closeVideoGallery.addEventListener('click', function() {
+                    videoGalleryModal.style.display = 'none';
+                });
+            }
+
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(event) {
+                if (event.target === videoGalleryModal) {
+                    videoGalleryModal.style.display = 'none';
+                }
+            });
+        } else {
+            console.error('Video Gallery Button or Modal not found');
+        }
+
+        window.onclick = function(event) {
+            if (event.target == photoGalleryModal) {
+                photoGalleryModal.style.display = 'none';
+            }
+            if (event.target == videoGalleryModal) {
+                videoGalleryModal.style.display = 'none';
+            }
+        };
+    });
+});
+
+// Ensure the script is placed at the end of the body in your HTML file
+
+// Get the elements for the photo gallery
+const photoGalleryBtn = document.getElementById('photo-gallery-btn');
+const photoGalleryModal = document.getElementById('photo-gallery-modal');
+const closePhotoGallery = document.getElementById('close-photo-gallery');
+
+// Get the elements for the video gallery
+const videoGalleryBtn = document.getElementById('video-gallery-btn');
+const videoGalleryModal = document.getElementById('video-gallery-modal');
+const closeVideoGallery = document.getElementById('close-video-gallery');
+
+// Add click event listener to the photo gallery button
+photoGalleryBtn.onclick = function() {
+    photoGalleryModal.style.display = 'block';
+};
+
+// Add click event listener to the close button of the photo gallery
+closePhotoGallery.onclick = function() {
+    photoGalleryModal.style.display = 'none';
+};
+
+// Add click event listener to the video gallery button
+videoGalleryBtn.addEventListener('click', function() {
+    console.log('Video Gallery Button Clicked');
+    videoGalleryModal.style.display = 'flex'; // Open modal on button click
+});
+
+// Add click event listener to the close button of the video gallery
+closeVideoGallery.addEventListener('click', function() {
+    videoGalleryModal.style.display = 'none';
+});
+// Add click event listener to the window to close the modals when clicking outside
+window.onclick = function(event) {
+    if (event.target == photoGalleryModal) {
+        photoGalleryModal.style.display = 'none';
+    }
+    if (event.target == videoGalleryModal) {
+        videoGalleryModal.style.display = 'none';
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // ... existing JavaScript code ...
 });
