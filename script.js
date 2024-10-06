@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    } else {
+        console.error('Menu toggle or nav menu not found');
+    }
 
     // Close mobile menu when a link is clicked
     const navLinks = document.querySelectorAll('nav a');
@@ -257,19 +261,14 @@ window.onclick = function(event) {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = navMenu.querySelectorAll('a');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-    menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
         });
-    });
-
-    // ... existing JavaScript code ...
+    } else {
+        console.error('Menu toggle or nav menu not found');
+    }
 });
