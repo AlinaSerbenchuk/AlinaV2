@@ -263,14 +263,13 @@ h2::after {
     overflow: auto; /* Enable scrolling if items overflow */
     width: 90%; /* Increase the width for a wider gallery */
     max-width: 1000px; /* Increase the maximum width */
-    height: 70vh; /* Adjust the height for a better shape */
     margin: 20px auto; /* Center the gallery horizontally and add top/bottom margin */
-    border: 3px solid #ddd; /* Add a slightly thicker border for emphasis */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance the shadow for more depth */
+
     padding: 15px; /* Increase padding for better spacing */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     border-radius: 10px; /* Add rounded corners for a softer look */
-    background-color: #f9f9f9; /* Optional: Add a subtle background color */
+    justify-content: center;
+    gap: 20px;
 }
 .gallery-item {
     flex: 1 1 28%; /* Adjust the size of each item for better layout */
@@ -428,4 +427,25 @@ h2::after {
         display: inline-block;
         margin: 0 10px;
     }
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
 }
