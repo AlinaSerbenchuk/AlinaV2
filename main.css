@@ -141,7 +141,7 @@ nav ul li a:hover::after {
 }
 
 main, section {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
