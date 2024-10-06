@@ -97,27 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.classList.remove('active');
     }
 
-    // Add pricing cards
-    const pricingContainer = document.querySelector('.pricing-container');
-    const pricingPlans = [
-        { name: 'Basic', price: '$99', features: ['1-hour session', '10 edited photos', 'Online gallery'] },
-        { name: 'Standard', price: '$199', features: ['2-hour session', '20 edited photos', 'Online gallery', 'Print release'] },
-        { name: 'Premium', price: '$299', features: ['3-hour session', '30 edited photos', 'Online gallery', 'Print release', '1 canvas print'] }
-    ];
-
-    pricingPlans.forEach(plan => {
-        const card = document.createElement('div');
-        card.classList.add('pricing-card');
-        card.innerHTML = `
-            <h3>${plan.name}</h3>
-            <p class="price">${plan.price}</p>
-            <ul>
-                ${plan.features.map(feature => `<li>${feature}</li>`).join('')}
-            </ul>
-            <button class="book-now">Book Now</button>
-        `;
-        pricingContainer.appendChild(card);
-    });
 
     // Typing animation for About Me section
     const aboutContent = document.querySelector('.about-content');
