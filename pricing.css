@@ -1,22 +1,152 @@
+.stunning-pricing {
+  padding: 0rem 0 7rem 0;
+  background: white;
+}
+
+.pricing-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 300;
+}
 
 .pricing-container {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.pricing-item {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    transition: transform 0.3s;
+.material-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
 }
 
-.pricing-item a {
-    text-decoration: none;
-    color: black;
+.material-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.pricing-item:hover {
-    transform: scale(1.05);
+.pricing-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 2rem;
+}
+
+.pricing-icon {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pricing-icon .material-icons {
+  font-size: 48px;
+  color: #333;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.pricing-subtitle {
+  color: #666;
+  font-size: 1rem;
+}
+
+.pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  color: #555;
+}
+
+.pricing-features .material-icons {
+  color: #4caf50;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.pricing-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.price-amount {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.material-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.material-button:hover {
+  background: #000;
+}
+
+.material-button .material-icons {
+  margin-left: 0.5rem;
+}
+
+.featured {
+  border: 2px solid #333;
+  transform: scale(1.05);
+}
+
+.featured:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .material-card {
+    width: 100%;
+  }
+
+  .featured {
+    transform: none;
+  }
+
+  .featured:hover {
+    transform: translateY(-5px);
+  }
 }

@@ -1,18 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
+    });
+  }
+
   // Lazy loading for iframes
   const videoItems = document.querySelectorAll(".video-wrapper iframe");
 
   const loadVideo = (video) => {
-    // Store the src
-    const src = video.src;
-
-    // Remove src temporarily
-    video.src = "";
-
-    // Set it back - this triggers the load when the element is in viewport
-    setTimeout(() => {
-      video.src = src;
-    }, 100);
+    if (!video.src && video.dataset.src) {
+      video.src = video.dataset.src;
+    }
   };
 
   // Intersection Observer for lazy loading
@@ -54,4 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Listen for scroll events to handle video visibility
   window.addEventListener("scroll", handleVideoVisibility, { passive: true });
+
+  // Add pageshow event listener to handle back/forward navigation
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      // Page was restored from bfcache
+      videoItems.forEach((video) => {
+        loadVideo(video);
+      });
+    }
+  });
 });

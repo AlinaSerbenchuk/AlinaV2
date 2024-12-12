@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name - Photography Portfolio</title>
+    <title>Портфолио Алины Сербенчук</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="pricing.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <header>
       <nav class="navbar">
         <button class="menu-toggle" id="menu-toggle">&#9776;</button>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="photo-gallery.html">Фото</a></li>
+          <li><a href="video-gallery.html">Видео</a></li>
+          <li><a href="#pricing">Прайс</a></li>
+          <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
     </header>
@@ -74,55 +83,115 @@
       <div class="gallery-container">
         <div class="gallery-item">
           <a href="photo-gallery.html">
-            <img src="images/pictures.jpg" alt="Photo Gallery" />
-            <p>Photo</p>
+            <img src="images/pictures.jpg" alt="Фотогалерея" />
+            <p>Фото</p>
           </a>
         </div>
         <div class="gallery-item">
           <a href="video-gallery.html">
-            <img src="images/videos.jpg" alt="Video Gallery" />
-            <p>Video</p>
+            <img src="images/videos.jpg" alt="Видеогалерея" />
+            <p>Видео</p>
           </a>
         </div>
       </div>
     </section>
 
-    <section id="pricing">
-      <h2>Прайс</h2>
+    <section id="pricing" class="stunning-pricing">
+      <h2 class="pricing-main-title">Прайс</h2>
       <div class="pricing-container">
-        <div class="pricing-item">
-          <a href="photo-pricing.html">
-            <p>PHOTO</p>
-            <p>Info inside</p>
+        <div class="pricing-item material-card">
+          <a href="photo-pricing.html" class="pricing-link">
+            <div class="pricing-header">
+              <div class="pricing-icon">
+                <span class="material-icons">photo_camera</span>
+              </div>
+              <h3 class="pricing-title">ФОТОГРАФИЯ</h3>
+              <p class="pricing-subtitle">Индивидуальные фотосессии</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li>
+                  <span class="material-icons">check_circle</span> Портретная
+                  фотография
+                </li>
+                <li>
+                  <span class="material-icons">check_circle</span>
+                  Художественная фотография
+                </li>
+                <li>
+                  <span class="material-icons">check_circle</span>
+                  Концептуальная фотография
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <p class="pricing-info">
+                <span class="price-amount">от 5000₽</span>
+              </p>
+              <button class="pricing-button material-button">
+                Подробнее
+                <span class="material-icons">arrow_forward</span>
+              </button>
+            </div>
           </a>
         </div>
-        <div class="pricing-item">
-          <a href="video-pricing.html">
-            <p>VIDEO</p>
-            <p>Info inside</p>
+
+        <div class="pricing-item material-card featured">
+          <a href="video-pricing.html" class="pricing-link">
+            <div class="pricing-header">
+              <div class="pricing-icon">
+                <span class="material-icons">videocam</span>
+              </div>
+              <h3 class="pricing-title">ВИДЕОСЪЕМКА</h3>
+              <p class="pricing-subtitle">Арт-видео проекты</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li>
+                  <span class="material-icons">check_circle</span> Видео-арт
+                </li>
+                <li>
+                  <span class="material-icons">check_circle</span>
+                  Экспериментальное видео
+                </li>
+                <li>
+                  <span class="material-icons">check_circle</span>
+                  Художественные музыкальные клипы
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <p class="pricing-info">
+                <span class="price-amount">от 10000₽</span>
+              </p>
+              <button class="pricing-button material-button">
+                Подробнее
+                <span class="material-icons">arrow_forward</span>
+              </button>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Photo Gallery Modal -->
+    <!-- Модальное окно для фотогалереи -->
     <div id="photo-gallery-modal" class="modal" style="display: none">
       <div class="modal-content">
         <span class="close" id="close-photo-gallery">&times;</span>
-        <h2>Photo Gallery</h2>
+        <h2>Фотогалерея</h2>
         <div class="gallery">
-          <!-- Images will be added dynamically -->
+          <!-- Изображения будут добавлены динамически -->
         </div>
       </div>
     </div>
 
-    <!-- Video Gallery Modal -->
+    <!-- Модальное окно для видеогалереи -->
     <div id="video-gallery-modal" class="modal" style="display: none">
       <div class="modal-content">
         <span class="close" id="close-video-gallery">&times;</span>
-        <h2>Video Gallery</h2>
+        <h2>Видеогалерея</h2>
         <div class="video-gallery">
-          <!-- Videos will be added dynamically -->
+          <!-- Видео будут добавлены динамически -->
         </div>
       </div>
     </div>
@@ -147,16 +216,16 @@
 
     <footer>
       <div class="footer-container">
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy Policy</a>
-        </div>
         <div class="social-media">
-          <a href="https://facebook.com" target="_blank">Facebook</a>
-          <a href="https://twitter.com" target="_blank">Twitter</a>
-          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="#contact" target="_blank" class="social-icon telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="#" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" target="_blank" class="social-icon vk">
+            <i class="fab fa-vk"></i>
+          </a>
         </div>
       </div>
     </footer>
