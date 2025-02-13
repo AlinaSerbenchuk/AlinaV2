@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Courier New";
   color: var(--text-primary);
   padding-top: 80px;
 }
